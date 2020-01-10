@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://www.kiazoldyck.top/"/>
   <updated>2020-01-09T15:23:59.291Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://www.kiazoldyck.top/</id>
   
   <author>
     <name>Kiazoldyck</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>写点什么</title>
-    <link href="http://yoursite.com/2020/01/09/%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/"/>
-    <id>http://yoursite.com/2020/01/09/%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/</id>
+    <link href="https://www.kiazoldyck.top/2020/01/09/%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/"/>
+    <id>https://www.kiazoldyck.top/2020/01/09/%E5%86%99%E7%82%B9%E4%BB%80%E4%B9%88/</id>
     <published>2020-01-09T15:17:20.000Z</published>
     <updated>2020-01-09T15:23:59.291Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/01/07/hello-world/"/>
-    <id>http://yoursite.com/2020/01/07/hello-world/</id>
+    <link href="https://www.kiazoldyck.top/2020/01/07/hello-world/"/>
+    <id>https://www.kiazoldyck.top/2020/01/07/hello-world/</id>
     <published>2020-01-07T11:01:27.679Z</published>
     <updated>2020-01-08T01:42:21.569Z</updated>
     
@@ -59,7 +59,7 @@
     
     
     
-      <category term="try" scheme="http://yoursite.com/tags/try/"/>
+      <category term="try" scheme="https://www.kiazoldyck.top/tags/try/"/>
     
   </entry>
   
