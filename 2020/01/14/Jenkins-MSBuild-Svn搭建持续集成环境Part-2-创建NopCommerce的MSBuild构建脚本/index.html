@@ -96,7 +96,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/alunzi/Figure-bed/master/blog_files/picgo_github_figurebed20200114142128.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/alunzi/Figure-bed/master/blog_files/picgo_github_figurebed20200114175348.png">
 <meta property="article:published_time" content="2020-01-14T05:37:06.000Z">
-<meta property="article:modified_time" content="2020-01-14T10:14:56.708Z">
+<meta property="article:modified_time" content="2020-01-14T10:15:47.108Z">
 <meta property="article:author" content="Kiazoldyck">
 <meta property="article:tag" content="持续集成">
 <meta property="article:tag" content="自动化部署">
@@ -420,7 +420,7 @@
 <h4 id="Step-1-创建一个MSBuild-XML文件"><a href="#Step-1-创建一个MSBuild-XML文件" class="headerlink" title="Step 1 | 创建一个MSBuild XML文件"></a>Step 1 | 创建一个MSBuild XML文件</h4><p>首先创建一个文件，命名为<code>NopCommerce.msbuild</code>,这个扩展名只是方便我们认出它是一个MSBuild脚本，也可以不写扩展名，然后往这个文件里面添加一个<code>Project</code>作为根元素：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Project xmlns&#x3D;&quot;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;developer&#x2F;msbuild&#x2F;2003&quot;&gt;</span><br><span class="line">&lt;&#x2F;Project&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="Step-2-添加一组Properties"><a href="#Step-2-添加一组Properties" class="headerlink" title="Step 2 | 添加一组Properties:"></a>Step 2 | 添加一组<code>Properties</code>:</h4><p>往<code>Project</code>里面添加一组<code>PropertyGroup</code>：</p>
+<h4 id="Step-2-添加一组Properties"><a href="#Step-2-添加一组Properties" class="headerlink" title="Step 2 | 添加一组Properties:"></a>Step 2 | 添加一组Properties:</h4><p>往<code>Project</code>里面添加一组<code>PropertyGroup</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;PropertyGroup&gt;</span><br><span class="line">  &lt;RootFolder&gt;$(MSBuildProjectDirectory)&lt;&#x2F;RootFolder&gt;</span><br><span class="line">  &lt;DeployBranch  Condition&#x3D;&quot;&#39;$(DeployBranch)&#39; &#x3D;&#x3D; &#39;&#39;&quot;&gt;qa&lt;&#x2F;DeployBranch&gt;</span><br><span class="line">  &lt;DeployFolder  Condition&#x3D;&quot;&#39;$(DeployFolder)&#39; &#x3D;&#x3D; &#39;&#39;&quot;&gt;$(RootFolder)\Release&lt;&#x2F;DeployFolder&gt;</span><br><span class="line">  &lt;WebFolder&gt;$(RootFolder)\$(DeployBranch)\Presentation\Nop.Web&lt;&#x2F;WebFolder&gt;</span><br><span class="line">  &lt;Configuration Condition&#x3D;&quot;&#39;$(Configuration)&#39; &#x3D;&#x3D; &#39;&#39;&quot;&gt;Release&lt;&#x2F;Configuration&gt;</span><br><span class="line">  &lt;Platform Condition&#x3D;&quot;&#39;$(Platform)&#39; &#x3D;&#x3D; &#39;&#39;&quot;&gt;Any CPU&lt;&#x2F;Platform&gt;</span><br><span class="line">&lt;&#x2F;PropertyGroup&gt;</span><br></pre></td></tr></table></figure>
 
 <p><code>RootFolder</code>是根目录，<code>DeployBranch</code>发布分支，<code>DeployFolder</code>输出文件夹，默认为根目录底下的<code>Release</code>文件夹，<code>WebFolder</code>Nop.Web的文件夹，<code>Configuration</code>默认为<code>Release</code>版本，<code>Platform</code>默认<code>Any CPU</code>。</p>
