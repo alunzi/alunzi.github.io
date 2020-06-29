@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.kiazoldyck.top/"/>
-  <updated>2020-06-28T11:05:48.468Z</updated>
+  <updated>2020-06-29T10:58:50.264Z</updated>
   <id>https://www.kiazoldyck.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.kiazoldyck.top/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/"/>
     <id>https://www.kiazoldyck.top/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/</id>
     <published>2020-06-28T11:00:20.000Z</published>
-    <updated>2020-06-28T11:05:48.468Z</updated>
+    <updated>2020-06-29T10:58:50.264Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="安装AWS-CLI-2"><a href="#安装AWS-CLI-2" class="headerlink" title="安装AWS CLI 2"></a>安装AWS CLI 2</h4><ol><li><p>下载安装文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl &quot;https:&#x2F;&#x2F;awscli.amazonaws.com&#x2F;awscli-exe-linux-x86_64.zip&quot; -o &quot;awscliv2.zip&quot;</span><br></pre></td></tr></table></figure></li><li><p>解压文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip awscliv2.zip</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    <content type="html"><![CDATA[<h4 id="安装AWS-CLI-2"><a href="#安装AWS-CLI-2" class="headerlink" title="安装AWS CLI 2"></a>安装AWS CLI 2</h4><ol><li><p>下载安装文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl &quot;https:&#x2F;&#x2F;awscli.amazonaws.com&#x2F;awscli-exe-linux-x86_64.zip&quot; -o &quot;awscliv2.zip&quot;</span><br></pre></td></tr></table></figure></li><li><p>解压文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ unzip awscliv2.zip</span><br></pre></td></tr></table></figure></li></ol><ol start="3"><li><p>运行安装程序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo .&#x2F;aws&#x2F;install</span><br></pre></td></tr></table></figure></li><li><p>确认安装</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ aws --version</span><br><span class="line">aws-cli&#x2F;2.0.24 Python&#x2F;3.7.3 Linux&#x2F;5.3.0-59-generic botocore&#x2F;2.0.0dev28</span><br></pre></td></tr></table></figure></li></ol><h4 id="配置-AWS-CLI"><a href="#配置-AWS-CLI" class="headerlink" title="配置 AWS CLI"></a>配置 AWS CLI</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$aws configure</span><br><span class="line">AWS Access Key ID [None]:AKIA4********57I7AN7</span><br><span class="line">AWS Secret Access Key [None]:PNX76SlbFpEu*************FWr3tIqLReevn</span><br><span class="line">Default region name [None]:cn-north-1</span><br><span class="line">Default output format [None]: json</span><br></pre></td></tr></table></figure><h4 id="使用令牌授权"><a href="#使用令牌授权" class="headerlink" title="使用令牌授权"></a>使用令牌授权</h4><p><a href="https://docs.aws.amazon.com/cli/latest/reference/ecr/get-login-password.html" target="_blank" rel="noopener">get-login-password</a> (AWS CLI)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aws ecr get-login-password --region region | docker login --username AWS --password-stdin aws_account_id.dkr.ecr.region.amazonaws.com</span><br></pre></td></tr></table></figure><h4 id="推送镜像"><a href="#推送镜像" class="headerlink" title="推送镜像"></a>推送镜像</h4><p>给镜像打标签</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag e9ae3c220b23 aws_account_id.dkr.ecr.region.amazonaws.com&#x2F;my-web-app</span><br></pre></td></tr></table></figure><p>推送</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push aws_account_id.dkr.ecr.region.amazonaws.com&#x2F;my-web-app</span><br></pre></td></tr></table></figure><p>列出存储库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aws ecr describe-repositories</span><br></pre></td></tr></table></figure><p>拉取镜像</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull aws_account_id.dkr.ecr.us-west-2.amazonaws.com&#x2F;amazonlinux:latest</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -43,6 +43,8 @@
       <category term="Docker" scheme="https://www.kiazoldyck.top/tags/Docker/"/>
     
       <category term="Amazon ECR" scheme="https://www.kiazoldyck.top/tags/Amazon-ECR/"/>
+    
+      <category term="Linux" scheme="https://www.kiazoldyck.top/tags/Linux/"/>
     
   </entry>
   
