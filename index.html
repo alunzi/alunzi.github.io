@@ -308,6 +308,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.kiazoldyck.top/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kiazoldyck">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kiazoldyck's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/" itemprop="url">推送Docker镜像到Amazon ECR</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-28T19:00:20+08:00">
+                2020-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E6%B2%89%E6%B7%80/" itemprop="url" rel="index">
+                    <span itemprop="name">知识沉淀</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/" class="leancloud_visitors" data-flag-title="推送Docker镜像到Amazon ECR">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          安装AWS CLI 2
+下载安装文件
+1$ curl &quot;https:&#x2F;&#x2F;awscli.amazonaws.com&#x2F;awscli-exe-linux-x86_64.zip&quot; -o &quot;awscliv2.zip&quot;
+
+解压文件
+1$ un
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/28/%E6%8E%A8%E9%80%81Docker%E9%95%9C%E5%83%8F%E5%88%B0Amazon-ECR/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.kiazoldyck.top/2020/06/24/Docker%E6%89%98%E7%AE%A1-NET-Core-3.1%E7%A8%8B%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1407,7 +1575,7 @@ mongodump 备份备份单表
       
         
           
-          前言在我写出这个标题的时候，把自己逗笑了，我觉得应该没几个人有这样的奇葩需求。事情的缘由是这样的，公司有个大数据工程师同事，他需要我帮他导出我们官网的产品数据，然后放到AWS s3的某一个bucket里面，按照/year/month/day/p.csv的格式存放，每日都需要上传最新数据，具体他怎么去
+          前言在我写出这个标题的时候，我觉得应该没几个人有这样的奇葩需求。事情是这样的，公司有个大数据工程师同事，他需要我帮他导出我们官网的产品数据，然后放到AWS s3的某一个bucket里面，按照/year/month/day/p.csv的格式存放，每日都需要上传最新数据，具体他怎么去分析这些文件咱就不管
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1775,169 +1943,6 @@ mongodump 备份备份单表
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.kiazoldyck.top/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Kiazoldyck">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/profile.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kiazoldyck's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/" itemprop="url">Jenkins+MSBuild+Svn搭建持续集成环境Part 1: MSBuild</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-13T16:06:45+08:00">
-                2020-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%9F%A5%E8%AF%86%E6%B2%89%E6%B7%80/" itemprop="url" rel="index">
-                    <span itemprop="name">知识沉淀</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/" class="leancloud_visitors" data-flag-title="Jenkins+MSBuild+Svn搭建持续集成环境Part 1: MSBuild">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          前言由于公司的开发人员越来越多，每个人负责的自己模块开发，需要频繁的提交与发布qa和uat环境，那么搭建持续集成环境就显得十分必要。网上关于持续集成的解释非常多，这边不再多做阐述。对于我来说，我要实现的目的就是，开发人员提交代码到开发分支之后，我把代码合并到qa和uat分支，剩下的事情就交给程序，由
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1992,7 +1997,7 @@ mongodump 备份备份单表
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2014,7 +2019,7 @@ mongodump 备份备份单表
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
