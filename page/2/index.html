@@ -308,6 +308,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.kiazoldyck.top/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kiazoldyck">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/profile.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kiazoldyck's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/" itemprop="url">Jenkins+MSBuild+Svn搭建持续集成环境Part 2: 创建NopCommerce的MSBuild构建脚本</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-14T13:37:06+08:00">
+                2020-01-14
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2020-02-10T15:52:00+08:00">
+                2020-02-10
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9F%A5%E8%AF%86%E6%B2%89%E6%B7%80/" itemprop="url" rel="index">
+                    <span itemprop="name">知识沉淀</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/" class="leancloud_visitors" data-flag-title="Jenkins+MSBuild+Svn搭建持续集成环境Part 2: 创建NopCommerce的MSBuild构建脚本">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          上一节 Jenkins+MSBuild+Svn搭建持续集成环境Part 1: MSBuild 对MSBuild做了简单介绍，那么这一节就针对实际的项目来创建MSBuild构建脚本。对于简单的小项目，也许直接通过 msbuild xxxx.csproj就能得到你想要的结果，但是对于复杂的项目，那就需要
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/14/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-2-%E5%88%9B%E5%BB%BANopCommerce%E7%9A%84MSBuild%E6%9E%84%E5%BB%BA%E8%84%9A%E6%9C%AC/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://www.kiazoldyck.top/2020/01/13/Jenkins-MSBuild-Svn%E6%90%AD%E5%BB%BA%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E7%8E%AF%E5%A2%83Part-1-MSBuild/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -870,7 +1043,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -892,7 +1065,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
