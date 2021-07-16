@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Docker构建Yapi</title>
+      <link href="/2021/07/16/Docker%E6%9E%84%E5%BB%BAYapi/"/>
+      <url>/2021/07/16/Docker%E6%9E%84%E5%BB%BAYapi/</url>
+      
+        <content type="html"><![CDATA[<p>项目开发一直有在用yapi，说实话也没有觉得很好用，不太爽的是只能选择用MongoDB，但是好像也没有其它太好的选择，而且之前也用了挺久了，已经有不少历史数据。最近出于一些原因需要搬迁服务器，因为数据库之前已经有了，所以部署相对来说比较简单点，之前是将yapi直接部署在Linux上面，这次想部署在docker里面。</p><h3 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull registry.cn-hangzhou.aliyuncs.com&#x2F;anoy&#x2F;yapi</span><br></pre></td></tr></table></figure><h3 id="创建容器"><a href="#创建容器" class="headerlink" title="创建容器"></a>创建容器</h3><p>将yapi的config.json文件挂载出来</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">-v &#x2F;data&#x2F;yapi&#x2F;api&#x2F;config.json:&#x2F;api&#x2F;config.json \</span><br><span class="line">--name yapi \</span><br><span class="line">--workdir &#x2F;api&#x2F;vendors \</span><br><span class="line">-p 3000:3000 \</span><br><span class="line">registry.cn-hangzhou.aliyuncs.com&#x2F;anoy&#x2F;yapi \</span><br><span class="line">server&#x2F;app.js</span><br></pre></td></tr></table></figure><h3 id="官方配置文件"><a href="#官方配置文件" class="headerlink" title="官方配置文件"></a>官方配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;port&quot;: &quot;3000&quot;,</span><br><span class="line">  &quot;adminAccount&quot;: &quot;admin@admin.com&quot;,</span><br><span class="line">  &quot;timeout&quot;:120000,</span><br><span class="line">  &quot;db&quot;: &#123;</span><br><span class="line">    &quot;servername&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">    &quot;DATABASE&quot;: &quot;yapi&quot;,</span><br><span class="line">    &quot;port&quot;: 27017,</span><br><span class="line">    &quot;user&quot;: &quot;test1&quot;,</span><br><span class="line">    &quot;pass&quot;: &quot;test1&quot;,</span><br><span class="line">    &quot;authSource&quot;: &quot;&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;mail&quot;: &#123;</span><br><span class="line">    &quot;enable&quot;: true,</span><br><span class="line">    &quot;host&quot;: &quot;smtp.163.com&quot;,</span><br><span class="line">    &quot;port&quot;: 465,</span><br><span class="line">    &quot;from&quot;: &quot;***@163.com&quot;,</span><br><span class="line">    &quot;auth&quot;: &#123;</span><br><span class="line">      &quot;user&quot;: &quot;***@163.com&quot;,</span><br><span class="line">      &quot;pass&quot;: &quot;*****&quot;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart yapi</span><br></pre></td></tr></table></figure><h3 id="nginx配置域名"><a href="#nginx配置域名" class="headerlink" title="nginx配置域名"></a>nginx配置域名</h3><p>进入nginx目录创建一个yapi.conf</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;nginx&#x2F;conf.d</span><br><span class="line">vi yapi.conf</span><br></pre></td></tr></table></figure><p>编辑内容，公司这边已经有现成的域名跟证书了，通过负载均衡配置规则，80自动跳转到443（aws route53+ELB），所以nginx这边简单配置一下80端口</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name yapi.xxx.com;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        proxy_pass   http:&#x2F;&#x2F;127.0.0.1:3000;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;重新加载nginx配置</span><br><span class="line">nginx -s reload</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 知识沉淀 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>科学上网教程-Trojan</title>
       <link href="/2020/06/30/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B-Trojan/"/>
       <url>/2020/06/30/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%95%99%E7%A8%8B-Trojan/</url>
